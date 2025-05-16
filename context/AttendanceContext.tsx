@@ -119,15 +119,15 @@ export function AttendanceProvider({ children }: { children: React.ReactNode }) 
     const classStartTime = new Date();
     const [hours, minutes] = startTime.split(':');
     classStartTime.setHours(parseInt(hours), parseInt(minutes.replace('AM', '').replace('PM', '')));
-
-    const status = now > classStartTime ? 'late' : 'present';
+    
+    const attendanceStatus = now > classStartTime ? 'late' : 'present';
 
     const newRecord: AttendanceRecord = {
       id: Date.now().toString(),
       classId,
       userId,
       timestamp: now,
-      status,
+      status: attendanceStatus,
       location: {
         latitude: location.coords.latitude,
         longitude: location.coords.longitude,
