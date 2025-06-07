@@ -1,0 +1,13 @@
+column_name,data_type,is_nullable,column_default
+id,uuid,NO,null
+name,text,NO,null
+latitude,double precision,YES,null
+longitude,double precision,YES,null
+distance_threshold,double precision,NO,100
+start_time,timestamp with time zone,NO,null
+end_time,timestamp with time zone,YES,null
+active,boolean,NO,true
+lecturer_id,uuid,NO,null
+qr_code_value,text,YES,null
+qr_code_expiry,bigint,YES,null
+created_at,timestamp with time zone,NO,now()
